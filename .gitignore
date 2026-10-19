@@ -1,4 +1,3 @@
-prof*/
 *.py
-chk-*.png
-check-*.png
+*.png
+prof*/
