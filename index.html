@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Website — FOR SALE · Rahul Sharma</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%2305070e'/%3E%3Ctext x='12' y='17' font-size='14' font-family='Arial' font-weight='bold' fill='%2322d3ee' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05070e; --bg2:#0a0f1c; --card:#0d1424; --line:rgba(140,180,255,.14);
+  --cy:#22d3ee; --mg:#e879f9; --am:#fbbf24; --gr:#34d399; --tx:#e6eefc; --dim:#8ea3c4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--tx);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
+body:before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(circle at 12% 8%,rgba(34,211,238,.10),transparent 42%),
+             radial-gradient(circle at 88% 92%,rgba(232,121,249,.10),transparent 44%)}
+h1,h2,h3,.f{font-family:'Outfit',sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px;position:relative;z-index:1}
+/* nav */
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
+  background:linear-gradient(180deg,rgba(5,7,14,.95),rgba(5,7,14,.72));
+  border-bottom:1px solid var(--line)}
+.navin{max-width:1180px;margin:0 auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-family:'Outfit';font-weight:900;font-size:17px;letter-spacing:.5px;
+  background:linear-gradient(90deg,var(--cy),var(--mg));-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand small{display:block;font-family:'Inter';font-weight:500;font-size:10.5px;letter-spacing:2.2px;
+  color:var(--dim);-webkit-text-fill-color:var(--dim);text-transform:uppercase;margin-top:2px}
+.navbtns{display:flex;gap:10px;align-items:center}
+.pill{display:inline-block;padding:7px 16px;border-radius:100px;font-size:11px;font-weight:600;
+  letter-spacing:1.4px;text-transform:uppercase;border:1px solid var(--line);color:var(--dim)}
+.pill.hot{border-color:rgba(251,191,36,.45);color:var(--am);background:rgba(251,191,36,.07)}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 30px;border-radius:12px;
+  font-family:'Outfit';font-weight:700;font-size:13.5px;letter-spacing:.6px;text-decoration:none;cursor:pointer;
+  border:none;transition:.25s}
+.btn.cy{background:linear-gradient(100deg,#0ea5c4,#7c3aed);color:#fff;box-shadow:0 8px 30px rgba(34,211,238,.22)}
+.btn.cy:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(124,58,237,.35)}
+.btn.ghost{background:rgba(140,180,255,.07);color:var(--tx);border:1px solid var(--line)}
+.btn.ghost:hover{background:rgba(140,180,255,.15)}
+.btn.wa{background:linear-gradient(100deg,#16a34a,#059669);color:#fff;box-shadow:0 8px 30px rgba(34,197,94,.22)}
+/* hero */
+.hero{padding:66px 0 40px;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:9px;padding:9px 20px;border-radius:100px;
+  border:1px solid rgba(251,191,36,.4);background:rgba(251,191,36,.08);color:var(--am);
+  font-family:'Outfit';font-weight:700;font-size:11.5px;letter-spacing:2px;text-transform:uppercase}
+.badge .dot{width:7px;height:7px;border-radius:50%;background:var(--am);animation:bl 1.6s infinite}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:.25}}
+.hero h1{font-size:clamp(30px,5.4vw,62px);font-weight:900;line-height:1.06;margin:26px 0 14px;letter-spacing:-.02em;
+  background:linear-gradient(178deg,#fff 8%,#a8f4ff 42%,#22d3ee 70%,#e879f9 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{max-width:720px;margin:0 auto;color:#b9cbe6;font-size:clamp(14px,1.6vw,17.5px);line-height:1.75}
+.hero p.lead b{color:#fff;font-weight:600}
+.cta{display:flex;gap:13px;justify-content:center;margin-top:32px;flex-wrap:wrap}
+.herourl{margin-top:26px;display:inline-flex;align-items:center;gap:10px;padding:11px 22px;border-radius:10px;
+  background:rgba(34,211,238,.07);border:1px solid rgba(34,211,238,.3);font-size:13px;color:#8fe9ff;
+  font-family:'Outfit';font-weight:500;letter-spacing:.4px}
+.herourl span{color:var(--dim);font-size:11px}
+.herourl a{color:#7df9ff;text-decoration:none;border-bottom:1px dashed rgba(125,249,255,.45)}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:46px 0 8px}
+.stat{background:linear-gradient(160deg,rgba(140,180,255,.09),rgba(140,180,255,.03));
+  border:1px solid var(--line);border-radius:16px;padding:20px 18px;text-align:center}
+.stat .n{font-family:'Outfit';font-weight:900;font-size:clamp(22px,2.6vw,32px);
+  background:linear-gradient(90deg,var(--cy),var(--mg));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .l{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--dim);margin-top:7px}
+/* sections */
+section{padding:64px 0}
+.shead{text-align:center;margin-bottom:40px}
+.shead .k{display:inline-block;font-family:'Outfit';font-weight:700;font-size:11px;letter-spacing:3px;
+  text-transform:uppercase;color:var(--cy);margin-bottom:14px}
+.shead h2{font-size:clamp(24px,3.6vw,40px);font-weight:900;letter-spacing:-.02em}
+.shead p{color:var(--dim);font-size:14px;margin-top:10px}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.shot{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);
+  background:var(--bg2);cursor:zoom-in;transition:.3s}
+.shot:hover{transform:translateY(-5px);border-color:rgba(34,211,238,.45);box-shadow:0 18px 50px rgba(0,0,0,.6)}
+.shot img{width:100%;display:block;aspect-ratio:1422/804;object-fit:cover}
+.shot .cap{position:absolute;left:14px;bottom:12px;padding:6px 13px;border-radius:100px;
+  background:rgba(5,7,14,.82);backdrop-filter:blur(8px);font-family:'Outfit';font-weight:700;
+  font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--cy)}
+/* lightbox */
+#lb{position:fixed;inset:0;z-index:200;display:none;place-items:center;background:rgba(3,5,10,.93);backdrop-filter:blur(10px)}
+#lb.on{display:grid}
+#lb img{max-width:92vw;max-height:88vh;border-radius:12px;border:1px solid rgba(34,211,238,.35)}
+#lb .x{position:absolute;top:22px;right:26px;width:44px;height:44px;border-radius:50%;
+  background:rgba(140,180,255,.1);border:1px solid var(--line);color:#fff;font-size:20px;cursor:pointer}
+/* features */
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:16px}
+.fcard{background:linear-gradient(160deg,rgba(140,180,255,.08),rgba(140,180,255,.02));
+  border:1px solid var(--line);border-radius:16px;padding:24px 22px;transition:.3s}
+.fcard:hover{border-color:rgba(34,211,238,.4);transform:translateY(-4px)}
+.fcard .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:19px;
+  background:linear-gradient(135deg,rgba(34,211,238,.18),rgba(232,121,249,.18));margin-bottom:15px}
+.fcard h3{font-size:15.5px;font-weight:700;margin-bottom:9px}
+.fcard p{color:var(--dim);font-size:13.5px;line-height:1.65}
+/* price */
+.prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:17px;align-items:stretch}
+.pcard{position:relative;background:linear-gradient(170deg,rgba(140,180,255,.09),rgba(140,180,255,.02));
+  border:1px solid var(--line);border-radius:18px;padding:28px 24px;display:flex;flex-direction:column}
+.pcard.feat2{border-color:rgba(232,121,249,.45);background:linear-gradient(170deg,rgba(232,121,249,.10),rgba(140,180,255,.03));
+  box-shadow:0 14px 44px rgba(232,121,249,.13)}
+.pcard .tag{position:absolute;top:-12px;left:24px;padding:5px 14px;border-radius:100px;
+  background:linear-gradient(90deg,var(--cy),var(--mg));color:#04121a;font-family:'Outfit';
+  font-weight:900;font-size:10.5px;letter-spacing:1.6px}
+.pcard h3{font-size:16px;font-weight:700;margin-bottom:5px}
+.pcard .sub{font-size:12.5px;color:var(--dim);margin-bottom:20px;line-height:1.55}
+.pcard .amt{font-family:'Outfit';font-weight:900;font-size:clamp(28px,3.4vw,38px);line-height:1;margin-bottom:6px}
+.pcard .amt small{font-size:14px;font-weight:500;color:var(--dim);letter-spacing:0}
+.pcard .was{font-size:13px;color:var(--dim);text-decoration:line-through;margin-bottom:20px;white-space:nowrap}
+.pcard ul{list-style:none;flex:1;display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
+.pcard li{font-size:13px;color:#c3d4ea;display:flex;gap:9px;align-items:flex-start;line-height:1.5}
+.pcard li:before{content:'✓';color:var(--gr);font-weight:700;flex:0 0 auto}
+.pcard .btn{width:100%}
+/* specs table */
+.specs{background:var(--bg2);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.row{display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:none}
+.row>div{padding:15px 22px;font-size:13.5px}
+.row>div:first-child{color:var(--dim);border-right:1px solid var(--line);font-family:'Outfit';
+  font-weight:500;letter-spacing:.4px;font-size:12.5px}
+.row code{background:rgba(34,211,238,.1);color:#7df9ff;padding:2px 8px;border-radius:6px;font-size:12px}
+/* faq */
+.faq{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.qa{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.qa h3{font-size:14.5px;font-weight:700;margin-bottom:9px;color:#dcebff}
+.qa p{color:var(--dim);font-size:13.5px;line-height:1.7}
+/* contact */
+.contact{background:linear-gradient(170deg,rgba(34,211,238,.09),rgba(232,121,249,.07));
+  border:1px solid rgba(34,211,238,.22);border-radius:22px;padding:44px 30px;text-align:center}
+.contact h2{font-size:clamp(24px,3.6vw,38px);font-weight:900;margin-bottom:12px}
+.contact p{color:#c3d4ea;font-size:14.5px;max-width:640px;margin:0 auto 28px;line-height:1.7}
+.cgrid{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.ci{display:flex;align-items:center;gap:10px;padding:12px 22px;border-radius:12px;
+  background:rgba(5,7,14,.6);border:1px solid var(--line);text-decoration:none;color:var(--tx);font-size:13.5px;transition:.25s}
+.ci:hover{border-color:rgba(34,211,238,.5);transform:translateY(-2px)}
+.ci b{color:var(--cy);font-weight:600}
+.note{margin-top:22px;font-size:12px;color:var(--dim);max-width:640px;margin-left:auto;margin-right:auto;line-height:1.7}
+footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:var(--dim);font-size:12px}
+@media(max-width:720px){
+  .navin{flex-direction:column;align-items:flex-start;gap:10px;padding:14px 18px}
+  .row{grid-template-columns:1fr}
+  .row>div:first-child{border-right:none;border-bottom:1px dashed var(--line);padding-bottom:7px}
+  .contact{padding:32px 20px}
+  section{padding:46px 0}
+}
+</style>
+</head>
+<body>
+<nav><div class="navin">
+  <div class="brand">RAHUL.SHARMA<small>Portfolio · For Sale</small></div>
+  <div class="navbtns">
+    <span class="pill hot">● Live Preview</span>
+    <a class="btn ghost" href="#packages" style="padding:10px 20px;font-size:12px">Packages</a>
+    <a class="btn wa" href="https://wa.me/918853070268?text=Hi%2C%20I%20am%20interested%20in%20buying%20your%20portfolio%20website.%20Please%20share%20details." target="_blank" rel="noopener" style="padding:10px 20px;font-size:12px">WhatsApp</a>
+  </div>
+</div></nav>
+
+<div class="wrap">
+  <div class="hero">
+    <span class="badge"><span class="dot"></span>Website for sale · Ready to transfer</span>
+    <h1>Premium Portfolio Website<br>Handcrafted, Pixel-Perfect</h1>
+    <p class="lead">A complete <b>personal portfolio website</b> — holographic 3D design, animated hero, skills,
+      experience, projects, achievements and a contact section. <b>Single file, zero dependencies, no backend.</b>
+      Buy it and it's yours — code, design and live hosting.</p>
+    <div class="cta">
+      <a class="btn cy" href="#packages">View Packages ↓</a>
+      <a class="btn ghost" href="https://hardik7889.github.io/portfolio/" target="_blank" rel="noopener">Live Demo ↗</a>
+    </div>
+    <div class="herourl">Currently live at <span>→</span> <a href="https://hardik7889.github.io/portfolio/" target="_blank" rel="noopener">hardik7889.github.io/portfolio</a></div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">1</div><div class="l">Single HTML File</div></div>
+    <div class="stat"><div class="n">0</div><div class="l">Dependencies</div></div>
+    <div class="stat"><div class="n">8</div><div class="l">Sections</div></div>
+    <div class="stat"><div class="n">100%</div><div class="l">Responsive</div></div>
+    <div class="stat"><div class="n">6</div><div class="l">Theme Variants</div></div>
+  </div>
+
+  <section id="preview">
+    <div class="shead">
+      <span class="k">Live Preview</span>
+      <h2>Yehi site aapka hoga</h2>
+      <p>Real screenshots of the running website — click any image to view it full size.</p>
+    </div>
+    <div class="gal">
+      <div class="shot" data-img="listing/hero.jpg"><img src="listing/hero.jpg" alt="Hero"><span class="cap">Hero</span></div>
+      <div class="shot" data-img="listing/about.jpg"><img src="listing/about.jpg" alt="About"><span class="cap">About + Stats</span></div>
+      <div class="shot" data-img="listing/skills.jpg"><img src="listing/skills.jpg" alt="Skills"><span class="cap">Skills</span></div>
+      <div class="shot" data-img="listing/exp.jpg"><img src="listing/exp.jpg" alt="Experience"><span class="cap">Experience</span></div>
+      <div class="shot" data-img="listing/edu.jpg"><img src="listing/edu.jpg" alt="Education"><span class="cap">Education</span></div>
+      <div class="shot" data-img="listing/proj.jpg"><img src="listing/proj.jpg" alt="Projects"><span class="cap">Projects</span></div>
+      <div class="shot" data-img="listing/ach.jpg"><img src="listing/ach.jpg" alt="Achievements"><span class="cap">Achievements</span></div>
+      <div class="shot" data-img="listing/contact.jpg"><img src="listing/contact.jpg" alt="Contact"><span class="cap">Contact</span></div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="shead">
+      <span class="k">What You Get</span>
+      <h2>Kya kya milta hai</h2>
+      <p>Not a template — every section is hand-written and animated.</p>
+    </div>
+    <div class="feat">
+      <div class="fcard"><div class="ic">✦</div><h3>Holographic Hero</h3><p>Rotating orbit rings, glowing disc, travelling node and a portrait that wakes up in full colour on hover.</p></div>
+      <div class="fcard"><div class="ic">⌨</div><h3>Typewriter Role Line</h3><p>The role line cycles through titles with a blinking caret — React Dev, Web Dev, Designer.</p></div>
+      <div class="fcard"><div class="ic">◈</div><h3>3D Tilt</h3><p>Mouse-driven perspective tilt on the portrait and project cards. Smooth, subtle, no lag.</p></div>
+      <div class="fcard"><div class="ic">▤</div><h3>Scroll Reveals</h3><p>Sections fade and lift into view as you scroll, with animated heading underlines.</p></div>
+      <div class="fcard"><div class="ic">◉</div><h3>Multi-colour Hover</h3><p>Every text element gains a flowing rainbow gradient and neon halo while staying crisp.</p></div>
+      <div class="fcard"><div class="ic">≡</div><h3>Skills Marquee</h3><p>An infinite ticker of skills along the bottom of the hero — pure CSS animation.</p></div>
+      <div class="fcard"><div class="ic">⬡</div><h3>Fully Responsive</h3><p>Collapses to a single column under 860px. Tested on desktop and mobile.</p></div>
+      <div class="fcard"><div class="ic">⚡</div><h3>Zero Backend</h3><p>No server, no database, no API keys. Host it anywhere static — GitHub Pages, Netlify, Vercel.</p></div>
+    </div>
+  </section>
+
+  <section id="specs">
+    <div class="shead">
+      <span class="k">Tech Specs</span>
+      <h2>Technical Details</h2>
+    </div>
+    <div class="specs">
+      <div class="row"><div>File size</div><div><code>~35 KB</code> single <code>index.html</code> — all CSS and JS inline</div></div>
+      <div class="row"><div>Technologies</div><div>HTML5 · CSS3 (custom properties, grid, flexbox, keyframes) · Vanilla JavaScript</div></div>
+      <div class="row"><div>External requests</div><div>Only Google Fonts (Outfit + Fira Code). No frameworks, no CDNs, no tracking.</div></div>
+      <div class="row"><div>Sections</div><div>Hero · About · Skills · Experience · Education · Projects · Achievements · Contact</div></div>
+      <div class="row"><div>Design variants</div><div>6 themes built (v1–v6). Buyer gets <b>all six</b> — pick whichever fits your brand.</div></div>
+      <div class="row"><div>Browser support</div><div>Chrome, Edge, Firefox, Safari — last 2 versions</div></div>
+      <div class="row"><div>Accessibility</div><div>Semantic HTML, alt text, keyboard-focusable links, reduced-motion friendly</div></div>
+      <div class="row"><div>License</div><div>Full commercial rights — use it, rebrand it, sell it again</div></div>
+    </div>
+  </section>
+
+  <section id="packages">
+    <div class="shead">
+      <span class="k">Buy It</span>
+      <h2>Teen packages · Apna choose karo</h2>
+      <p>Sab packages mein poora source code, saare 6 themes aur WhatsApp handover support included.</p>
+    </div>
+    <div class="prices">
+      <div class="pcard">
+        <h3>Starter</h3>
+        <div class="sub">Code + design, apna hosting khud</div>
+        <div class="amt">₹4,999<small> one-time</small></div>
+        <div class="was">₹9,999</div>
+        <ul>
+          <li>Full <code>index.html</code> source (single file)</li>
+          <li>All 6 design variants</li>
+          <li>Assets folder (portrait, WebP + PNG)</li>
+          <li>Your name, photo, links &amp; content edit</li>
+          <li>Free hosting on GitHub Pages (you own the repo)</li>
+          <li>WhatsApp handover + 7 days support</li>
+        </ul>
+        <a class="btn ghost" href="https://wa.me/918853070268?text=Hi%2C%20I%20want%20the%20Starter%20package%20(%E2%82%B94%2C999)%20for%20your%20portfolio%20website." target="_blank" rel="noopener">Order Starter</a>
+      </div>
+
+      <div class="pcard feat2">
+        <span class="tag">MOST POPULAR</span>
+        <h3>Professional</h3>
+        <div class="sub">Sab kuch + custom domain + 2 revisions</div>
+        <div class="amt">₹9,999<small> one-time</small></div>
+        <div class="was">₹19,999</div>
+        <ul>
+          <li>Everything in Starter</li>
+          <li>Your own <b>custom domain</b> (e.g. yourname.com) + DNS setup</li>
+          <li>2 rounds of design/content revisions</li>
+          <li>SEO meta tags, Open Graph image, favicon</li>
+          <li>Contact form wiring (Formspree / Google Forms)</li>
+          <li>Analytics setup (Google Analytics / Plausible)</li>
+          <li>30 days WhatsApp support</li>
+        </ul>
+        <a class="btn cy" href="https://wa.me/918853070268?text=Hi%2C%20I%20want%20the%20Professional%20package%20(%E2%82%B99%2C999)%20for%20your%20portfolio%20website." target="_blank" rel="noopener">Order Professional</a>
+      </div>
+
+      <div class="pcard">
+        <h3>Agency / Resell</h3>
+        <div class="sub">Rebrand karke dobara becho — unlimited client use</div>
+        <div class="amt">₹19,999<small> one-time</small></div>
+        <div class="was">₹39,999</div>
+        <ul>
+          <li>Everything in Professional</li>
+          <li><b>Unlimited rebrand &amp; resale</b> — sell it to your own clients</li>
+          <li>Client-ready README + handover doc</li>
+          <li>Reusable component breakdown (sections as modules)</li>
+          <li>Priority WhatsApp support — 90 days</li>
+        </ul>
+        <a class="btn ghost" href="https://wa.me/918853070268?text=Hi%2C%20I%20want%20the%20Agency%2FResell%20package%20(%E2%82%B919%2C999)%20for%20your%20portfolio%20website." target="_blank" rel="noopener">Order Agency</a>
+      </div>
+    </div>
+    <p class="note" style="text-align:center;margin-top:30px">
+      💳 Payment: UPI / Google Pay / PhonePe / Bank Transfer — 50% advance, 50% after you confirm the handover.
+      <br>🔒 Escrow option available on request. No payment link is stored on this page.
+    </p>
+  </section>
+
+  <section id="faq">
+    <div class="shead">
+      <span class="k">FAQ</span>
+      <h2>Aksar poochhe jaane wale sawaal</h2>
+    </div>
+    <div class="faq">
+      <div class="qa"><h3>Is this a template ya hand-coded?</h3><p>Hand-coded. Har section likha gaya hai — koi WordPress theme, koi page builder nahi. Isliye file sirf ~35 KB hai aur load speed fast hai.</p></div>
+      <div class="qa"><h3>Hosting ka kya hoga?</h3><p>Free GitHub Pages hosting — aap apna repo aur apna account rakhenge, mujhe kabhi access nahi chahiye. Chahein to Netlify/Vercel pe bhi laga deta hoon.</p></div>
+      <div class="qa"><h3>Mera naam/photo/content kaise aayega?</h3><p>Content clearly marked hai — ek WhatsApp message mein mujhe naam, photo, links aur details bhejo, main poora site rebrand karke bhej dunga. Professional package mein 2 revision rounds free hain.</p></div>
+      <div class="qa"><h3>Kya main ise dobara bech sakta hoon?</h3><p>Starter aur Professional mein nahi. Agency/Resell package mein unlimited rebrand + resale rights milte hain.</p></div>
+      <div class="qa"><h3>Custom domain kitna kharcha aayega?</h3><p>Domain ka daam aapke liye alag se lagega (~₹800–1,200/saal .com). Main DNS aur hosting setup kar dunga — wo free hai.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="contact">
+      <h2>Ready to buy?</h2>
+      <p>Message karo — main within a few hours reply karunga. Live demo dekhna ho to upar <b>Live Demo</b> button se kholo.</p>
+      <div class="cgrid">
+        <a class="ci" href="https://wa.me/918853070268?text=Hi%2C%20I%20want%20to%20buy%20your%20portfolio%20website." target="_blank" rel="noopener"><b>WhatsApp</b> +91 88530 70268</a>
+        <a class="ci" href="mailto:sharmap8853@gmail.com?subject=Portfolio%20website%20for%20sale"><b>Email</b> sharmap8853@gmail.com</a>
+        <a class="ci" href="https://hardik7889.github.io/portfolio/" target="_blank" rel="noopener"><b>Live Demo</b> View site ↗</a>
+      </div>
+      <p class="note">Aapke phone/email sirf handover ke liye use hoga — koi spam nahi bheja jayega.</p>
+    </div>
+  </section>
+</div>
+
+<footer>© 2026 · Rahul Sharma · This page is the sales listing for the portfolio website above.</footer>
+
+<div id="lb"><button class="x" id="lbx">✕</button><img id="lbi" alt=""></div>
+<script>
+const lb=document.getElementById('lb'), lbi=document.getElementById('lbi'), lbx=document.getElementById('lbx');
+document.querySelectorAll('.shot').forEach(s=>{
+  s.addEventListener('click',()=>{ lbi.src=s.dataset.img; lb.classList.add('on'); document.body.style.overflow='hidden'; });
+});
+const close=()=>{ lb.classList.remove('on'); document.body.style.overflow=''; };
+lbx.addEventListener('click',close);
+lb.addEventListener('click',e=>{ if(e.target===lb) close(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') close(); });
+</script>
+</body>
+</html>
