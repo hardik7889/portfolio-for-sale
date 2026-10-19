@@ -1,3 +1,4 @@
-*.py
-*.png
+pv/
 prof*/
+*.png
+*.py
